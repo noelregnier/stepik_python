@@ -1,4 +1,4 @@
-#task description https://stepik.org/lesson/24462/step/7?unit=6768
+# task description https://stepik.org/lesson/24462/step/7?unit=6768
 
 tree = {}
 def add(line: str):
