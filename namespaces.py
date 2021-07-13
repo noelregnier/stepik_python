@@ -1,20 +1,17 @@
-
+# task description https://stepik.org/lesson/24460/step/10?unit=6766
 
 namespaces = {}
 structure = {'global': set()}
 
+
 def create(namespace, parent):
     namespaces[namespace] = parent
-    if parent in structure:
-        structure.get(parent).add(namespace)
-    else:
-        structure[parent] = set()
+    structure[namespace] = set()
+
 
 def add(namespace, var):
-    if namespace in structure:
-        structure.get(namespace).add(var)
-    else:
-        structure[namespace] = {var}
+    structure.get(namespace).add(var)
+
 
 def get(namespace, var):
     if var in structure[namespace]:
@@ -29,8 +26,6 @@ def get(namespace, var):
     print("None")
 
 
-
-
 def try_me():
     n = int(input())
     for i in range(n):
@@ -41,10 +36,9 @@ def try_me():
         elif i[0] == "create":
             create(i[1], i[2])
         else:
-        # elif i[0] == "get":
             get(i[1], i[2])
 
 
-# try_me()
-# print(namespaces)
-# print(structure)
+try_me()
+# print("namespaces:    ", namespaces)
+# print("structure:    ", structure)
