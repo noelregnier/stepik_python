@@ -12,7 +12,6 @@ def add(line: str):
 deep_found = False
 
 def deep_get(one, two):
-    # print("checking: ", one, two)
     global deep_found
     if one == two:
         deep_found = True
@@ -24,7 +23,7 @@ def deep_get(one, two):
         return
     for element in tree[two]:
         deep_get(one, element)
-    return
+
 
 n = int(input())
 for i in range(n):
@@ -37,7 +36,6 @@ for i in range(n):
 q = int(input())
 for i in range(q):
     deep_found = False
-    # request_line = input()
     one, two = input().split(" ")
     if one and two in tree:
         deep_get(one, two)
