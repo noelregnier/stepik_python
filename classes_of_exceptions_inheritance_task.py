@@ -1,14 +1,14 @@
 #task description https://stepik.org/lesson/24463/step/7?unit=6771
+import re
 
 tree = {}
-def add(line: str):
-    try:
-        words = line.split(":")
-        tree[words[0].strip()] = set(k.strip(",") for k in words[1].split())
-    except:
-        tree[words[0]] = set()
-
 checked = set()
+
+def add(line: str):
+    line = re.split(r"\s*[:,\s]\s*", line)
+    k = line.pop(0)
+    v = set(line)
+    tree[k] = v
 
 def deep_check(item):
     global values
@@ -34,6 +34,8 @@ for i in range(b):
     item = input()
     values = tree[item]
     deep_check(item)
+
+
 
 
 
